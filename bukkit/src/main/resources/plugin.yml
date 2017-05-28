@@ -8,7 +8,6 @@ load: STARTUP
 
 externalRepos:
  - "http://repo.md-5.net/content/repositories/snapshots/"
- - "http://repo.thinkofdeath.co.uk/content/groups/public/"
 externalDepend:
  - "io.netty:netty-all:5.0.0.Alpha1"
  - "commons-io:commons-io:2.4"
