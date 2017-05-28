@@ -8,4 +8,4 @@ jobs:
             - checkout
             - run: mvn package
             - store_artifacts:
-                path: bukkit/target/ThinkMap-0.11-0.jar
+                path: bukkit/target/ThinkMap.jar
