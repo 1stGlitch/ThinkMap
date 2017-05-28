@@ -36,6 +36,7 @@
                 <module>core</module>
                 <module>html</module>
                 <module>resources</module>
+                <module>plugin-utils</module>
                 <module>bukkit</module>
             </modules>
         </profile>

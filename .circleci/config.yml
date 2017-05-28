@@ -1,0 +1,11 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/openjdk:8-jdk-browsers
+        working_directory: ~/ThinkMap
+        steps:
+            - checkout
+            - run: mvn package
+            - store_artifacts:
+                path: bukkit/target/ThinkMap.jar
