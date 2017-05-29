@@ -29,6 +29,10 @@
             // the full address (minus the protocol)
             serverAddress: location.hostname + ":%SERVERPORT%"
         };
+        // #serveraddress appended to the URL overrides location.hostname
+        if (location.hash.length !== 0) {
+            MapViewerConfig.serverAddress = location.hash.substring(1);
+        }
     </script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>

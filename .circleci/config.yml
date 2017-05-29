@@ -9,3 +9,5 @@ jobs:
             - run: mvn package
             - store_artifacts:
                 path: bukkit/target/ThinkMap.jar
+            - store_artifacts:
+                path: html/client/build
