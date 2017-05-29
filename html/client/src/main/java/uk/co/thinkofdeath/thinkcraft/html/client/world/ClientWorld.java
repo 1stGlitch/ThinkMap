@@ -138,6 +138,7 @@ public class ClientWorld extends World {
                     toLoad.add(new int[]{cx + x, cz + z});
                 }
             }
+            if (MapViewer.VIEW_DISTANCE == 0) toLoad.add(new int[]{cx, cz});
             Collections.sort(toLoad, new ChunkArraySorter(mapViewer.getCamera()));
             for (int[] pos : toLoad) {
                 loadChunk(pos[0], pos[1]);

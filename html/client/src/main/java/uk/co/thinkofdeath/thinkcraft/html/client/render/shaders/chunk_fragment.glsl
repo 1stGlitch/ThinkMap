@@ -1,6 +1,6 @@
 precision mediump float;
 
-const int MAX_TEXTURES = 10;
+const int MAX_TEXTURES = 1;
 
 uniform sampler2D textures[MAX_TEXTURES];
 
