@@ -20,89 +20,133 @@ import org.bukkit.block.Biome;
 
 import java.util.Arrays;
 
-public enum ThinkBiome {
-    // Snowy
-    FROZEN_OCEAN(Biome.FROZEN_OCEAN, 10),
-    FROZEN_RIVER(Biome.FROZEN_RIVER, 11),
-    ICE_PLAINS(Biome.ICE_PLAINS, 12),
-    ICE_PLAINS_SPIKES(Biome.ICE_PLAINS_SPIKES, 140),
-    COLD_BEACH(Biome.COLD_BEACH, 26),
-    COLD_TAIGA(Biome.COLD_TAIGA, 30),
-    COLD_TAIGA_MOUNTAINS(Biome.COLD_TAIGA_MOUNTAINS, 158),
-    // Cold
-    EXTREME_HILLS(Biome.EXTREME_HILLS, 3),
-    EXTREME_HILLS_MOUNTAINS(Biome.EXTREME_HILLS_MOUNTAINS, 131),
-    TAIGA(Biome.TAIGA, 5),
-    TAIGA_M(Biome.TAIGA_MOUNTAINS, 133),
-    THE_END(Biome.SKY, 9),
-    MEGA_TAIGA(Biome.MEGA_TAIGA, 32),
-    MEGA_SPRUCE_TAIGA(Biome.MEGA_SPRUCE_TAIGA, 160),
-    EXTREME_HILLS_PLUS(Biome.EXTREME_HILLS_PLUS, 34),
-    EXTREME_HILLS_PLUS_MOUNTAINS(Biome.EXTREME_HILLS_MOUNTAINS, 162),
-    STONE_BEACH(Biome.STONE_BEACH, 25),
-    // Medium/Lush
-    PLAINS(Biome.PLAINS, 1),
-    SUNFLOWER_PLAINS(Biome.SUNFLOWER_PLAINS, 129),
-    FOREST(Biome.FOREST, 4),
-    FLOWER_FOREST(Biome.FLOWER_FOREST, 132),
-    SWAMPLAND(Biome.SWAMPLAND, 6),
-    SWAMPLAND_MOUNTAINS(Biome.SWAMPLAND_MOUNTAINS, 134),
-    RIVER(Biome.RIVER, 7),
-    MUSHROOM_ISLAND(Biome.MUSHROOM_ISLAND, 14),
-    MUSHROOM_ISLAND_SHORE(Biome.MUSHROOM_SHORE, 15),
-    BEACH(Biome.BEACH, 16),
-    JUNGLE(Biome.JUNGLE, 21),
-    JUNGLE_MOUNTAINS(Biome.JUNGLE_MOUNTAINS, 149),
-    JUNGLE_EDGE(Biome.JUNGLE_EDGE, 23),
-    JUNGLE_EDGE_MOUNTAINS(Biome.JUNGLE_EDGE_MOUNTAINS, 151),
-    BIRCH_FOREST(Biome.BIRCH_FOREST, 27),
-    BIRCH_FOREST_MOUNTAINS(Biome.BIRCH_FOREST_MOUNTAINS, 155),
-    ROOFED_FOREST(Biome.ROOFED_FOREST, 29),
-    ROOFED_FOREST_MOUNTAIN(Biome.ROOFED_FOREST_MOUNTAINS, 157),
-    // Dry/Warm
-    DESERT(Biome.DESERT, 2),
-    DESERT_MOUNTAIN(Biome.DESERT_MOUNTAINS, 130),
-    HELL(Biome.HELL, 8),
-    SAVANNA(Biome.SAVANNA, 35),
-    SAVANNA_MOUNTAINS(Biome.SAVANNA_MOUNTAINS, 163),
-    MESA(Biome.MESA, 37),
-    MESA_BRYCE(Biome.MESA_BRYCE, 165),
-    SAVANNA_PLATEAU(Biome.SAVANNA_PLATEAU, 36),
-    MESA_PLATEAU_FOREST(Biome.MESA_PLATEAU_FOREST, 38),
-    MESA_PLATEAU(Biome.MESA_PLATEAU, 39),
-    SAVANNA_PLATEAU_MOUNTAINS(Biome.SAVANNA_PLATEAU_MOUNTAINS, 164),
-    MESA_PLATEAU_FOREST_MOUNTAINS(Biome.MESA_PLATEAU_FOREST_MOUNTAINS, 166),
-    MESA_PLATEAU_MOUNTAINS(Biome.MESA_PLATEAU_MOUNTAINS, 167),
-    // Neutral
-    OCEAN(Biome.OCEAN, 0),
-    DEEP_OCEAN(Biome.DEEP_OCEAN, 24),
-    ICE_MOUNTAINS(Biome.ICE_MOUNTAINS, 13),
-    DESERT_HILLS(Biome.DESERT_HILLS, 17),
-    FOREST_HILLS(Biome.FOREST_HILLS, 18),
-    TAIGA_HILLS(Biome.TAIGA_HILLS, 19),
-    JUNGLE_HILLS(Biome.JUNGLE_HILLS, 22),
-    BIRCH_FOREST_HILLS(Biome.BIRCH_FOREST_HILLS, 28),
-    COLD_TAIGA_HILLS(Biome.COLD_TAIGA_HILLS, 31),
-    MEGA_TAIGA_HILLS(Biome.MEGA_TAIGA_HILLS, 33),
-    BIRCH_FOREST_HILLS_MOUNTAINS(Biome.BIRCH_FOREST_HILLS_MOUNTAINS, 156),
-    MEGA_SPRUCE_TAIGA_HILLS(Biome.MEGA_SPRUCE_TAIGA_HILLS, 161),;
-    private static final int[] ids = new int[Biome.values().length];
-    private final Biome biome;
-    private final int id;
-
-    ThinkBiome(Biome biome, int id) {
-        this.biome = biome;
-        this.id = id;
-    }
-
+public class ThinkBiome {
     public static int bukkitToId(Biome biome) {
-        return ids[biome.ordinal()];
-    }
-
-    static {
-        Arrays.fill(ids, 255);
-        for (ThinkBiome biome : values()) {
-            ids[biome.biome.ordinal()] = biome.id;
+        switch (biome) {
+            // Snowy
+            case FROZEN_OCEAN:
+                return 10;
+            case FROZEN_RIVER:
+                return 11;
+            case ICE_FLATS:
+                return 12;
+            case MUTATED_TAIGA:
+                return 140;
+            case COLD_BEACH:
+                return 26;
+            case TAIGA_COLD:
+                return 30;
+            case MUTATED_JUNGLE:
+                return 158;
+            // Cold
+            case SKY:
+                return 3;
+            case MUTATED_SAVANNA_ROCK:
+                return 131;
+            case DESERT:
+                return 5;
+            case MUTATED_EXTREME_HILLS:
+                return 133;
+            case SWAMPLAND:
+                return 9;
+            case REDWOOD_TAIGA:
+                return 32;
+            case MUTATED_SAVANNA:
+                return 160;
+            case EXTREME_HILLS_WITH_TREES:
+                return 34;
+            case STONE_BEACH:
+                return 25;
+            // Medium/Lush
+            default:
+            case FOREST:
+                return 1;
+            case VOID:
+                return 129;
+            case PLAINS:
+                return 4;
+            case MUTATED_DESERT:
+                return 132;
+            case OCEAN:
+                return 6;
+            case MUTATED_FOREST:
+                return 134;
+            case HELL:
+                return 7;
+            case MUSHROOM_ISLAND:
+                return 14;
+            case MUSHROOM_ISLAND_SHORE:
+                return 15;
+            case BEACHES:
+                return 16;
+            case JUNGLE:
+                return 21;
+            case MUTATED_SWAMPLAND:
+                return 149;
+            case JUNGLE_EDGE:
+                return 23;
+            case MUTATED_ICE_FLATS:
+                return 151;
+            case BIRCH_FOREST:
+                return 27;
+            case MUTATED_REDWOOD_TAIGA:
+                return 155;
+            case ROOFED_FOREST:
+                return 29;
+            case MUTATED_EXTREME_HILLS_WITH_TREES:
+                return 157;
+            // Dry/Warm
+            case EXTREME_HILLS:
+                return 2;
+            case MUTATED_PLAINS:
+                return 130;
+            case TAIGA:
+                return 8;
+            case SAVANNA:
+                return 35;
+            case MUTATED_JUNGLE_EDGE:
+                return 163;
+            case MESA:
+                return 37;
+            case MUTATED_BIRCH_FOREST_HILLS:
+                return 165;
+            case SAVANNA_ROCK:
+                return 36;
+            case MESA_ROCK:
+                return 38;
+            case MESA_CLEAR_ROCK:
+                return 39;
+            case MUTATED_BIRCH_FOREST:
+                return 164;
+            case MUTATED_ROOFED_FOREST:
+                return 166;
+            case MUTATED_TAIGA_COLD:
+                return 167;
+            // Neutral
+            case RIVER:
+                return 0;
+            case DEEP_OCEAN:
+                return 24;
+            case ICE_MOUNTAINS:
+                return 13;
+            case DESERT_HILLS:
+                return 17;
+            case FOREST_HILLS:
+                return 18;
+            case TAIGA_HILLS:
+                return 19;
+            case JUNGLE_HILLS:
+                return 22;
+            case BIRCH_FOREST_HILLS:
+                return 28;
+            case TAIGA_COLD_HILLS:
+                return 31;
+            case REDWOOD_TAIGA_HILLS:
+                return 33;
+            case MUTATED_REDWOOD_TAIGA_HILLS:
+                return 156;
+            case MUTATED_MESA_ROCK:
+                return 161;
         }
     }
 }

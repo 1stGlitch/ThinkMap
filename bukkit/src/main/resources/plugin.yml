@@ -7,7 +7,7 @@ main: uk.co.thinkofdeath.thinkcraft.bukkit.ThinkMapPlugin
 load: STARTUP
 
 externalRepos:
- - "http://repo.md-5.net/content/repositories/snapshots/"
+ - "https://hub.spigotmc.org/nexus/content/repositories/snapshots"
 externalDepend:
  - "io.netty:netty-all:5.0.0.Alpha1"
  - "commons-io:commons-io:2.4"
